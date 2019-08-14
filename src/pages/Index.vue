@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex-center q-pa-md">
-    <q-card class="my-card">
+    <q-card class="my-card" style="min-height: 450px">
       <q-card-section>
         <div class="row">
           <div class="col q-pr-md">
@@ -20,16 +20,15 @@
         </div>
         <span class="q-pa-md" v-if="parseInt(no_of_rows)>0">
           <div v-for="(n,index) in parseInt(no_of_rows)" :key="index">
-            <div class="row" v-if="parseInt(columns_arr[index])">
+            <div class="row" v-bind:style="{ margin: calcMarginRow(gutter_row)}" v-if="parseInt(columns_arr[index])">
               <div class="col" v-for="(col, key) in parseInt(columns_arr[index])" :key="key">
-                <!-- <div class="box"></div> -->
-                <div class="box" v-bind:style="{ margin: calcWidth(gutter_col)}"></div>
+                <div class="box" v-bind:style="{ margin: calcMarginCol(gutter_col)}"></div>
               </div>
             </div>
-            <div class="text-center q-pt-md" v-else>Enter no.of columns for row {{index+1}}</div>
+            <div class="text-center q-pt-md text-h6" v-else>Enter no.of columns for row {{index+1}}</div>
           </div>
         </span>
-        <div class="text-center q-pt-md" v-else>Please enter no.of rows</div>
+        <h6 class="text-center" v-else>Please enter no.of rows</h6>
         <Row />
         <Box />
       </q-card-section>
@@ -38,17 +37,9 @@
 </template>
 
 <script>
-// import Input from '../components/Input'
-import Row from '../components/Row'
-import Box from '../components/Box'
 
 export default {
   name: 'PageIndex',
-  components: {
-    // Input,
-    Row,
-    Box
-  },
   data () {
     return {
       no_of_rows: '',
@@ -65,11 +56,15 @@ export default {
     }
   },
   methods: {
-    calcWidth (col) {
-      console.log('ind', col)
+    calcMarginCol (col) {
       let wi = (col) / (2) + 'px'
-      console.log('wi', wi)
-      return wi
+      let margin = '0px ' + wi
+      return margin
+    },
+    calcMarginRow (row) {
+      let wi = (row) / (2) + 'px'
+      let margin = wi + ' 0px'
+      return margin
     }
   }
 }
