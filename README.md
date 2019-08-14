@@ -1,6 +1,6 @@
 # zen3-vue-challenge
 
-# Live URL: 
+## Live URL: 
 [https://zen3-vue-challenge.netlify.com/#/](https://zen3-vue-challenge.netlify.com/#/)
 
 ## Framework:
