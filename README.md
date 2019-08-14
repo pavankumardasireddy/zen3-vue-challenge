@@ -1,27 +1,22 @@
-# Quasar App (vue-challenge)
+# zen3-vue-challenge
 
-A Quasar Framework app
+# Live URL: 
+[https://zen3-vue-challenge.netlify.com/#/](https://zen3-vue-challenge.netlify.com/#/)
+
+## Framework:
+Quasar: [https://quasar.dev/](https://quasar.dev/).
 
 ## Install the dependencies
 ```bash
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Start the app in development mode
 ```bash
 quasar dev
-```
-
-### Lint the files
-```bash
-npm run lint
 ```
 
 ### Build the app for production
 ```bash
 quasar build
 ```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
-# zen3-vue-challenge
